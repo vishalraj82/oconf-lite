@@ -3,17 +3,30 @@
   "version": "0.0.0",
   "description": "",
   "type": "module",
-  "main": "lib/oconf-lite.js",
+  "main": "cjs/oconf-lite.js",
+  "exports": {
+    ".": {
+      "require": "./cjs/oconf-lite.js",
+      "import": "./lib/oconf-lite.js"
+    }
+  },
   "scripts": {
+    "build": "rm -rf cjs && mkdir cjs && ascjs --no-default lib cjs",
+    "prepack": "npm run build",
     "coverage": "c8 mocha",
     "lint": "eslint . && prettier --check '**/*.js'",
     "test": "mocha"
   },
+  "files": [
+    "lib",
+    "cjs"
+  ],
   "keywords": [],
   "author": "Gustav Nikolaj <gustavnikolaj@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@gustavnikolaj/string-utils": "^2.0.0",
+    "ascjs": "^5.0.1",
     "c8": "^7.11.3",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
