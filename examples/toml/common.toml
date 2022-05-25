@@ -1,0 +1,5 @@
+fromCommon = true
+fromProduction = false
+
+[server.http]
+port = 80
