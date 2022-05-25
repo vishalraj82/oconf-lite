@@ -1,8 +1,12 @@
 import expect from "unexpected";
-import oconfLite from "../lib/oconf-lite.js";
+import oconfLite, { Oconf } from "../lib/oconf-lite.js";
 
 describe("oconf-lite", () => {
-  it("should be a function", () => {
-    expect(oconfLite, "to be a function");
+  it("should be an instance of Oconf", () => {
+    expect(oconfLite, "to be an", Oconf);
+  });
+
+  it("should have a .load method", () => {
+    expect(oconfLite.load, "to be a function");
   });
 });
