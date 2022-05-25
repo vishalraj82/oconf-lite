@@ -1,5 +1,3 @@
-/* global decsribe, it */
-
 import expect from "unexpected";
 import cjsonParser, { stripComments } from "../lib/cjson-parser.js";
 import { deindent } from "@gustavnikolaj/string-utils";
