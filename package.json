@@ -13,6 +13,7 @@
   "author": "Gustav Nikolaj <gustavnikolaj@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@gustavnikolaj/string-utils": "^2.0.0",
     "c8": "^7.11.3",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
