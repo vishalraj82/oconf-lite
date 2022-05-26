@@ -1,5 +1,3 @@
-/* global describe, it */
-
 import Oconf from "../lib/Oconf.js";
 import expect from "unexpected";
 

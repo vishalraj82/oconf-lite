@@ -1,5 +1,3 @@
-/* global describe, it */
-
 import { deepExtend } from "../lib/deep-extend.js";
 import expect from "unexpected";
 
