@@ -58,6 +58,41 @@ console.log(config);
 }
 ```
 
+## Bring your own parser
+
+By default `oconf-lite` will parses JSON files and our modified JSON parser will
+allow comments of both `//` and `/*` variants. But you can use almost any file
+format you can think of, as long as it can be represented as a plain old
+javascript object.
+
+```js
+import { Oconf } from 'oconf-lite';
+import toml from 'toml';
+
+const oconf = new Oconf({ parser: toml });
+oconf.load('/config/production.toml');
+```
+
+The `parser` option to the `Oconf` class wants an object with a `parse` method.
+Examples of supported parsers are:
+
+- The built in `JSON` object can be used as is: `new Oconf({ parser: JSON })`.
+- The [toml](https://npmjs.com/package/toml) npm package.
+- The [yaml](https://www.npmjs.com/package/yaml) npm package.
+- The [hjson](https://www.npmjs.com/package/hjson) npm package.
+
+The [js-yaml](https://www.npmjs.com/package/js-yaml) npm package won't work
+directly, but serves as a good example of how easy you can patch in unsupported
+parsers:
+
+```js
+import { Oconf } from "oconf-lite";
+import yaml from "js-yaml";
+
+const oconf = new Oconf({
+  parser: { parse: yaml.load },
+});
+```
 
 ## Differences from the original
 

@@ -36,6 +36,8 @@
     "eslint-plugin-mocha": "^10.0.4",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
+    "hjson": "^3.2.2",
+    "js-yaml": "^4.1.0",
     "mocha": "^10.0.0",
     "prettier": "^2.6.2",
     "toml": "^3.0.0",
