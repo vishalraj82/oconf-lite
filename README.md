@@ -76,3 +76,22 @@ and cjs versions of the code in the package. `oconf` and dependencies was almost
 4. `#public`-directives not supported at all.
 5. No longer ships support for
    [relaxedjson](https://www.npmjs.com/package/relaxed-json) parser.
+
+### Custom CJSON Parser
+
+Original `oconf` used a module for parsing cjson files. To get to
+zero-dependencies in `oconf-lite` we hand-rolled a brutally simplistic
+replacement for the `cjson` module.
+
+Instead of actually implementing a parser, it will simply do a single pass
+through the input string, replacing any comments with whitespace. This means
+that we can just rely on `JSON.parse` to do the heavy lifting. Our benchmarks
+shows that using the `cjson` parser implementation takes about 3.5 times longer.
+This is well within micro optimization territory; normally you will load your
+configuration once per process invocation, and the `cjson` module ran 10,000
+iterations of the benchmark in just above 350 ms on my laptop.
+
+Replacing the comments with whitespace instead of just removing them means that
+parse errors from `JSON.parse` are meaningful as is. They give the position
+offset into the JSON string, which we can then translate into line numbers and
+positions.
