@@ -1,0 +1,30 @@
+/* This is a non-sense demo cjson file for benchmarking.
+ */
+{
+  "server": {
+    "http": {
+      // We are using the default port
+      "port": 80
+    }
+  },
+  // Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+  // consectetur at blanditiis eaque iste asperiores et, reiciendis quaerat
+  // officia ullam, numquam inventore, omnis itaque? A eius accusantium veniam
+  // quibusdam quo.
+  "foo": {
+    "bar": {
+      /* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+       * consectetur at blanditiis eaque iste asperiores et, reiciendis quaerat
+       * officia ullam, numquam inventore, omnis itaque? A eius accusantium
+       * veniam quibusdam quo.
+       */
+      "qux": "baz"
+    }
+  },
+  "baz": [
+    "qux",
+    "quux"
+  ],
+  "volume": "/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem consectetur at blanditiis eaque iste asperiores et, reiciendis quaerat officia ullam, numquam inventore, omnis itaque? A eius accusantium veniam quibusdam quo."
+}
+// --- The End ---
