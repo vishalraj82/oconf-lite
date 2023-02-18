@@ -12,7 +12,6 @@
   },
   "scripts": {
     "build": "rm -rf cjs && mkdir cjs && ascjs --no-default lib cjs",
-    "install": "npm i -D && npm run build",
     "prepack": "npm run build",
     "coverage": "c8 mocha",
     "lint": "eslint . && prettier --check '**/*.js'",
